@@ -55,7 +55,7 @@ function App() {
             <Border>
                 <List items={arr} layout={"bullet"} />
             </Border> */}
-            <OnFunctions />
+            {/* <OnFunctions /> */}
         </div>
     );
 }

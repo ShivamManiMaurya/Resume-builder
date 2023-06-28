@@ -6,6 +6,12 @@ import { resumeData } from "../data/data";
 
 const Resume = () => {
     // console.log(resumeData.skills[0]);
+
+    const handleClick = () => {
+        console.log("clicked");
+        window.print();
+    };
+
     return (
         <div>
             <h1>Resume</h1>
@@ -28,6 +34,7 @@ const Resume = () => {
             {resumeData.education.map((details, index) => {
                 return <Education />;
             })}
+            <button onClick={handleClick}>Print</button>
         </div>
     );
 };
