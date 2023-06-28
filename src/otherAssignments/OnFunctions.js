@@ -38,6 +38,17 @@ const OnFunctions = () => {
         alert("copied");
     };
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Submit");
+    };
+
+    const handleKeyPress = (e) => {
+        if (e.key === "Enter") {
+            console.log("Enter is Pressed");
+        }
+    };
+
     return (
         <div
             style={{
@@ -110,6 +121,13 @@ const OnFunctions = () => {
                     aut quisquam repellat est error vitae ducimus amet, nulla
                     et.
                 </p>
+            </div>
+            <div>
+                <form action="" onSubmit={handleSubmit}>
+                    <label htmlFor="dummy">Dummy input</label>
+                    <input type="text" id="dummy" onKeyDown={handleKeyPress} />
+                    <button onSubmit={handleSubmit}>Submit</button>
+                </form>
             </div>
         </div>
     );
