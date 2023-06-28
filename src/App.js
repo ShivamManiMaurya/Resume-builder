@@ -1,6 +1,7 @@
 import "./App.css";
 import Resume from "./components/Resume";
 import Border from "./otherAssignments/Border";
+import EventBubblingConcep from "./otherAssignments/EventBubblingConcep";
 import List from "./otherAssignments/List";
 import OnFunctions from "./otherAssignments/OnFunctions";
 
@@ -56,6 +57,8 @@ function App() {
                 <List items={arr} layout={"bullet"} />
             </Border> */}
             <OnFunctions />
+            <EventBubblingConcep />
+            <button onClick={() => window.close()}>Band karo</button>
         </div>
     );
 }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import FunctionSendAsProps from "./FunctionSendAsProps";
 
 const OnFunctions = () => {
     const [mouseOver, setMouseOver] = useState({
@@ -47,6 +48,15 @@ const OnFunctions = () => {
         if (e.key === "Enter") {
             console.log("Enter is Pressed");
         }
+    };
+
+    const msg =
+        "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint, nostrum.";
+
+    const handleSend = () => {};
+
+    const handleClose = () => {
+        window.close();
     };
 
     return (
@@ -129,6 +139,9 @@ const OnFunctions = () => {
                     <button onSubmit={handleSubmit}>Submit</button>
                 </form>
             </div>
+
+            <FunctionSendAsProps msg={msg} onSend={(msg) => msg} />
+            <button onClick={handleClose}>Close Tab</button>
         </div>
     );
 };
