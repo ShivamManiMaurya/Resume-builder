@@ -1,7 +1,14 @@
 import React from "react";
 
-const Education = () => {
-    return <div>Education</div>;
+const Education = ({ edu }) => {
+    return (
+        <div>
+            {" "}
+            <ul>
+                <li>{edu} </li>
+            </ul>
+        </div>
+    );
 };
 
 export default Education;

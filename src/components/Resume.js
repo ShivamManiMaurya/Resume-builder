@@ -6,7 +6,6 @@ import { resumeData as data } from "../data/data";
 import ResumeEditor from "./ResumeEditor";
 
 const Resume = () => {
-    // console.log(resumeData.skills[0]);
     const [resumeData, setResumeData] = useState(data);
 
     const handleClick = () => {
@@ -15,22 +14,28 @@ const Resume = () => {
     };
 
     const handleExpData = (data) => {
-        console.log(data);
-        // resumeData.experience.push(data);
-        console.log(resumeData.experience);
+        const value = {
+            ...data,
+            id: resumeData.experience.length + 1,
+        };
         setResumeData({
-            ...resumeData.experience,
-            [resumeData.experience]: data,
+            ...resumeData,
+            experience: [...resumeData.experience, value],
         });
-        console.log(resumeData.experience.length);
     };
 
     const handleSkillData = (data) => {
-        console.log(data);
+        setResumeData({
+            ...resumeData,
+            skills: [...resumeData.skills, data],
+        });
     };
 
     const handleEduData = (data) => {
-        console.log(data);
+        setResumeData({
+            ...resumeData,
+            education: [...resumeData.education, data],
+        });
     };
 
     return (
@@ -52,8 +57,8 @@ const Resume = () => {
                 );
             })}
             {resumeData.education?.length > 0 && <h2>Education</h2>}
-            {resumeData.education?.map((details, index) => {
-                return <Education />;
+            {resumeData.education?.map((edu, index) => {
+                return <Education key={index} edu={edu} />;
             })}
             <button onClick={handleClick}>Print</button>
             <ResumeEditor
